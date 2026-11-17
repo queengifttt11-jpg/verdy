@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>untuk aprilia</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONT
+       ===================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+
+    button {
+      font-family: inherit;
+    }
+
+
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .page {
+
+      width: 100%;
+      height: 100vh;
+
+      min-height: 600px;
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255, 255, 255, 0.08),
+          transparent 25%
+        ),
+
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(255, 255, 255, 0.05),
+          transparent 25%
+        ),
+
+        #1a1a1a;
+    }
+
+
+    .page.active {
+      display: flex;
+    }
+
+
+
+    /* =====================================================
+       DEKORASI BACKGROUND
+       ===================================================== */
+
+    .decor {
+
+      position: absolute;
+
+      z-index: 1;
+
+      color: #bdbdbd;
+
+      opacity: 0.65;
+
+      pointer-events: none;
+
+      animation:
+        floating
+        3s
+        ease-in-out
+        infinite;
+    }
+
+
+    .decor-1 {
+      top: 12%;
+      left: 9%;
+      font-size: 30px;
+    }
+
+
+    .decor-2 {
+      top: 20%;
+      right: 12%;
+      font-size: 22px;
+      animation-delay: 0.5s;
+    }
+
+
+    .decor-3 {
+      bottom: 18%;
+      left: 14%;
+      font-size: 26px;
+      animation-delay: 1s;
+    }
+
+
+    .decor-4 {
+      bottom: 12%;
+      right: 12%;
+      font-size: 31px;
+      animation-delay: 1.5s;
+    }
+
+
+    .decor-5 {
+      top: 48%;
+      left: 6%;
+      font-size: 18px;
+      animation-delay: 2s;
+    }
+
+
+    .decor-6 {
+      top: 55%;
+      right: 7%;
+      font-size: 20px;
+      animation-delay: 0.8s;
+    }
+
+
+    @keyframes floating {
+
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+
+    }
+
+
+
+    /* =====================================================
+       CARD
+       ===================================================== */
+
+    .card {
+
+      width: 315px;
+
+      min-height: 450px;
+
+      padding: 28px 18px;
+
+      background: #ffffff;
+
+      border:
+        2px solid
+        #222222;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(
+          0,
+          0,
+          0,
+          0.55
+        );
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 5;
+    }
+
+
+
+    /* =====================================================
+       PAGE 1
+       LOADING
+       ===================================================== */
+
+    .loading-card {
+      justify-content: center;
+    }
+
+
+    .loading-title {
+
+      margin-top: 10px;
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 27px;
+
+      font-weight: 700;
+
+      letter-spacing: -0.2px;
+    }
+
+
+    .loading-subtitle {
+
+      margin-top: 7px;
+
+      color: #666666;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 15px;
+
+      font-weight: 400;
+
+      letter-spacing: 0.1px;
+    }
+
+
+
+    /* =====================================================
+       ICON LOADING
+       ===================================================== */
+
+    .gif-loading {
+
+      width: 180px;
+
+      height: 180px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      margin-bottom: 5px;
+    }
+
+
+    .gif-loading img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       LOADING BAR
+       ===================================================== */
+
+    .loading-bar {
+
+      width: 185px;
+
+      height: 8px;
+
+      margin-top: 25px;
+
+      background: #d6d6d6;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+
+    .loading-progress {
+
+      width: 0%;
+
+      height: 100%;
+
+      background: #222222;
+
+      border-radius: 20px;
+
+      animation:
+        loadingProgress
+        2.8s
+        linear
+        forwards;
+    }
+
+
+    @keyframes loadingProgress {
+
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+
+    }
+
+
+
+    /* =====================================================
+       TITLE
+       ===================================================== */
+
+    .title {
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 31px;
+
+      font-weight: 700;
+
+      line-height: 1.2;
+
+      letter-spacing: -0.3px;
+    }
+
+
+    .subtitle {
+
+      margin-top: 6px;
+
+      color: #555555;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 18px;
+
+      font-weight: 500;
+
+      line-height: 1.35;
+    }
+
+
+
+    /* =====================================================
+       ICON PERTANYAAN
+       ===================================================== */
+
+    .gif-question {
+
+      width: 235px;
+
+      height: 235px;
+
+      margin-top: 10px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+
+    .gif-question img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       BUTTON AREA
+       ===================================================== */
+
+    .buttons {
+
+      width: 100%;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-top: 4px;
+    }
+
+
+    .buttons button {
+
+      border: none;
+
+      padding: 11px 27px;
+
+      border-radius: 8px;
+
+      color: #ffffff;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 15px;
+
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        transform
+        0.15s
+        ease,
+
+        background
+        0.2s
+        ease;
+    }
+
+
+    .buttons button:active {
+
+      transform:
+        scale(0.92);
+    }
+
+
+
+    /* =====================================================
+       BUTTON MAUU
+       ===================================================== */
+
+    .yes-button {
+
+      background: #111111;
+
+      border:
+        1px solid
+        #111111 !important;
+    }
+
+
+    .yes-button:hover {
+      background: #444444;
+    }
+
+
+
+    /* =====================================================
+       BUTTON ENGGAA
+       ===================================================== */
+
+    .no-button {
+
+      background: #777777;
+
+      position: relative;
+    }
+
+
+    .no-button:hover {
+      background: #555555;
+    }
+
+
+
+    /* =====================================================
+       PAGE 3
+       ===================================================== */
+
+    .gif-thanks {
+
+      width: 240px;
+
+      height: 240px;
+
+      margin-top: 8px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+    }
+
+
+    .gif-thanks img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       MESSAGE
+       ===================================================== */
+
+    .message {
+
+      margin-top: 0;
+
+      color: #555555;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 14px;
+
+      font-weight: 400;
+
+      line-height: 1.7;
+    }
+
+
+    .message-name {
+
+      margin-bottom: 5px;
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 18px;
+
+      font-weight: 600;
+    }
+
+
+
+    /* =====================================================
+       BUTTON
+       ===================================================== */
+
+    .back-button {
+
+      margin-top: 15px;
+
+      padding: 9px 20px;
+
+      border-radius: 8px;
+
+      border:
+        2px solid
+        #222222;
+
+      background: transparent;
+
+      color: #222222;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .back-button:hover {
+
+      background: #222222;
+
+      color: #ffffff;
+    }
+
+
+
+    /* =====================================================
+       PAGE 4
+       LONG MESSAGE
+       ===================================================== */
+
+    .longtext-card {
+
+      width: 315px;
+
+      height: 520px;
+
+      min-height: 520px;
+
+      padding: 25px 18px 20px;
+
+      justify-content: flex-start;
+    }
+
+
+    .longtext-title {
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 27px;
+
+      font-weight: 700;
+
+      line-height: 1.25;
+
+      margin-bottom: 4px;
+
+      flex-shrink: 0;
+    }
+
+
+    .longtext-subtitle {
+
+      color: #777777;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 400;
+
+      margin-bottom: 15px;
+
+      flex-shrink: 0;
+    }
+
+
+
+    /* =====================================================
+       AREA SCROLL
+       ===================================================== */
+
+    .longtext-container {
+
+      width: 100%;
+
+      flex: 1;
+
+      min-height: 0;
+
+      overflow-y: auto;
+
+      overflow-x: hidden;
+
+      padding: 5px 10px 10px 4px;
+
+      text-align: left;
+
+      scroll-behavior: smooth;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+    .longtext-container::-webkit-scrollbar {
+
+      width: 5px;
+    }
+
+
+    .longtext-container::-webkit-scrollbar-track {
+
+      background: #eeeeee;
+
+      border-radius: 10px;
+    }
+
+
+    .longtext-container::-webkit-scrollbar-thumb {
+
+      background: #999999;
+
+      border-radius: 10px;
+    }
+
+
+    .longtext-container::-webkit-scrollbar-thumb:hover {
+
+      background: #666666;
+    }
+
+
+    .longtext {
+
+      color: #444444;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 400;
+
+      line-height: 1.85;
+
+      text-align: left;
+    }
+
+
+    .longtext p {
+
+      margin-bottom: 15px;
+    }
+
+
+    .longtext .closing {
+
+      margin-top: 22px;
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 16px;
+
+      font-weight: 600;
+
+      text-align: center;
+    }
+
+
+    .scroll-hint {
+
+      margin-top: 8px;
+
+      color: #999999;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 10px;
+
+      flex-shrink: 0;
+    }
+
+
+
+    /* =====================================================
+       BUTTON PAGE 4 KE PAGE 5
+       ===================================================== */
+
+    .photo-next-button {
+
+      margin-top: 12px;
+
+      padding: 10px 22px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #111111;
+
+      color: #ffffff;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+
+      flex-shrink: 0;
+    }
+
+
+    .photo-next-button:hover {
+
+      background: #444444;
+
+      transform: translateY(-2px);
+    }
+
+
+    .photo-next-button:active {
+
+      transform: scale(0.95);
+    }
+
+
+
+    /* =====================================================
+       PAGE 5
+       FOTO
+       ===================================================== */
+
+    .photo-card {
+
+      width: 315px;
+
+      height: 520px;
+
+      min-height: 520px;
+
+      padding: 25px 15px 20px;
+
+      justify-content: flex-start;
+
+      overflow: hidden;
+    }
+
+
+    .photo-title {
+
+      color: #111111;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 28px;
+
+      font-weight: 700;
+
+      line-height: 1.25;
+
+      margin-bottom: 5px;
+    }
+
+
+    .photo-subtitle {
+
+      color: #777777;
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 12px;
+
+      margin-bottom: 18px;
+    }
+
+
+
+    /* =====================================================
+       PHOTO SWIPER
+       ===================================================== */
+
+    .photo-swiper {
+
+      width: 100%;
+
+      display: flex;
+
+      gap: 12px;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      scroll-snap-type: x mandatory;
+
+      -webkit-overflow-scrolling: touch;
+
+      padding: 5px 5px 15px;
+
+      scrollbar-width: none;
+
+      flex: 1;
+
+      align-items: center;
+    }
+
+
+    .photo-swiper::-webkit-scrollbar {
+
+      display: none;
+    }
+
+
+    .photo-item {
+
+      flex: 0 0 165px;
+
+      height: 250px;
+
+      scroll-snap-align: center;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      background: #eeeeee;
+
+      border: 2px solid #222222;
+
+      box-shadow:
+        0 6px 15px
+        rgba(0, 0, 0, 0.18);
+    }
+
+
+    .photo-item img {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+    }
+
+
+    .photo-hint {
+
+      color: #999999;
+
+      font-size: 10px;
+
+      margin-top: 4px;
+
+      margin-bottom: 5px;
+    }
+
+
+    .back-to-message {
+
+      margin-top: 8px;
+
+      padding: 9px 18px;
+
+      border: 2px solid #222222;
+
+      border-radius: 8px;
+
+      background: transparent;
+
+      color: #222222;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+
+    .back-to-message:hover {
+
+      background: #222222;
+
+      color: #ffffff;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .page {
+
+        min-height: 100vh;
+      }
+
+
+      .card {
+
+        width: 310px;
+
+        min-height: 440px;
+      }
+
+
+      .title {
+
+        font-size: 29px;
+      }
+
+
+      .subtitle {
+
+        font-size: 17px;
+      }
+
+
+      .gif-question {
+
+        width: 220px;
+
+        height: 220px;
+      }
+
+
+      .gif-thanks {
+
+        width: 225px;
+
+        height: 225px;
+      }
+
+
+      .decor-1 {
+        left: 5%;
+      }
+
+
+      .decor-2 {
+        right: 5%;
+      }
+
+
+      .decor-3 {
+        left: 7%;
+      }
+
+
+      .decor-4 {
+        right: 6%;
+      }
+
+
+      .longtext-card {
+
+        width: 310px;
+
+        height: 510px;
+
+        min-height: 510px;
+      }
+
+
+      .longtext-title {
+
+        font-size: 26px;
+      }
+
+
+      .longtext {
+
+        font-size: 12.5px;
+
+        line-height: 1.8;
+      }
+
+
+      .photo-card {
+
+        width: 310px;
+
+        height: 510px;
+
+        min-height: 510px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+
+      .photo-title {
+
+        font-size: 25px;
+      }
+
+
+      .photo-item {
+
+        flex-basis: 155px;
+
+        height: 235px;
+      }
+
+    }
+
+
+
+    /* =====================================================
+       HP KECIL
+       ===================================================== */
+
+    @media (max-width: 350px) {
+
+      .card {
+
+        width: 290px;
+
+        min-height: 420px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+
+      .gif-loading {
+
+        width: 165px;
+
+        height: 165px;
+      }
+
+
+      .gif-question {
+
+        width: 205px;
+
+        height: 205px;
+      }
+
+
+      .gif-thanks {
+
+        width: 210px;
+
+        height: 210px;
+      }
+
+
+      .title {
+
+        font-size: 27px;
+      }
+
+
+      .subtitle {
+
+        font-size: 16px;
+      }
+
+
+      .buttons button {
+
+        padding: 10px 22px;
+      }
+
+
+      .longtext-card {
+
+        width: 290px;
+
+        height: 490px;
+
+        min-height: 490px;
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+      }
+
+
+      .longtext-title {
+
+        font-size: 24px;
+      }
+
+
+      .longtext {
+
+        font-size: 12px;
+
+        line-height: 1.75;
+      }
+
+
+      .photo-card {
+
+        width: 290px;
+
+        height: 490px;
+
+        min-height: 490px;
+      }
+
+
+      .photo-item {
+
+        flex-basis: 145px;
+
+        height: 220px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE 1
+       LOADING
+       ===================================================== -->
+
+  <section class="page page-1 active">
+
+    <div class="decor decor-1">♡</div>
+    <div class="decor decor-2">✦</div>
+    <div class="decor decor-3">♡</div>
+    <div class="decor decor-4">✦</div>
+    <div class="decor decor-5">♡</div>
+    <div class="decor decor-6">✦</div>
+
+
+    <div class="card loading-card">
+
+      <div class="gif-loading">
+
+        <img
+          src="icon1.webp"
+          alt="Loading"
+        >
+
+      </div>
+
+
+      <h1 class="loading-title">
+
+        Tunggu sebentar...
+
+      </h1>
+
+
+      <p class="loading-subtitle">
+
+        ada sesuatu buat kamu
+
+      </p>
+
+
+      <div class="loading-bar">
+
+        <div class="loading-progress"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       PAGE 2
+       PERTANYAAN
+       ===================================================== -->
+
+  <section class="page page-2">
+
+    <div class="decor decor-1">♡</div>
+    <div class="decor decor-2">✦</div>
+    <div class="decor decor-3">♡</div>
+    <div class="decor decor-4">✦</div>
+    <div class="decor decor-5">♡</div>
+    <div class="decor decor-6">✦</div>
+
+
+    <div class="card">
+
+
+      <h1 class="title">
+
+        Hai sayang,
+
+      </h1>
+
+
+      <h2 class="subtitle">
+
+        Maafin aku yaa!!!
+
+      </h2>
+
+
+      <div class="gif-question">
+
+        <img
+          src="icon2.webp"
+          alt="Question"
+        >
+
+      </div>
+
+
+      <div class="buttons">
+
+
+        <button
+          class="yes-button"
+          id="yesButton"
+        >
+
+          Iyaa
+
+        </button>
+
+
+        <button
+          class="no-button"
+          id="noButton"
+        >
+
+          Enggaa
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       PAGE 3
+       MAKASII
+       ===================================================== -->
+
+  <section class="page page-3">
+
+    <div class="decor decor-1">♡</div>
+    <div class="decor decor-2">✦</div>
+    <div class="decor decor-3">♡</div>
+    <div class="decor decor-4">✦</div>
+    <div class="decor decor-5">♡</div>
+    <div class="decor decor-6">✦</div>
+
+
+    <div class="card">
+
+
+      <h1 class="title">
+
+        Makasii Sayangg
+
+      </h1>
+
+
+      <div class="gif-thanks">
+
+        <img
+          src="icon3.webp"
+          alt="Thanks"
+        >
+
+      </div>
+
+
+      <div class="message">
+
+        <p>
+
+          ada sesuatu yang harus kamu baca...
+
+        </p>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        id="nextButton"
+      >
+
+        next 🤍
+
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       PAGE 4
+       LONG MESSAGE
+       ===================================================== -->
+
+  <section class="page page-4">
+
+    <div class="decor decor-1">♡</div>
+    <div class="decor decor-2">✦</div>
+    <div class="decor decor-3">♡</div>
+    <div class="decor decor-4">✦</div>
+    <div class="decor decor-5">♡</div>
+    <div class="decor decor-6">✦</div>
+
+
+    <div class="card longtext-card">
+
+
+      <h1 class="longtext-title">
+
+        Buat Kamu 🤍
+
+      </h1>
+
+
+      <p class="longtext-subtitle">
+
+        baca pelan-pelan ya...
+
+      </p>
+
+
+      <!-- =================================================
+           AREA TEXT YANG BISA DI-SCROLL
+           ================================================= -->
+
+      <div class="longtext-container">
+
+        <div class="longtext">
+
+
+          <p>
+
+            Sayanggg,
+
+          </p>
+
+
+          <p>
+
+         Aku minta maaf untuk semua sikap
+yang mungkin nyakitin kamu tanpa aku
+sadari.
+          </p>
+
+
+          <p>
+Kadang bukan maksudnya nyakitin, cuma aku belum bisa ngatur ego dengan baik.
+          </p>
+
+
+          <p>
+Terima kasih karena tetap sabar, tetap ada, dan tetap sayang meski aku sering salah.
+          </p>
+
+
+          <p>
+
+           Terima kasih sudah tetap mencintai aku dengan cara yang begitu tulus, dan terima kasih karena di setiap kurangku, kamu selalu kasih lebih banyak cinta.
+          </p>
+
+
+
+          <p class="closing">
+
+            — I love you sayangg
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- TOMBOL KE PAGE 5 -->
+
+      <button
+        class="photo-next-button"
+        id="photoButton"
+      >
+
+       next 🤍
+
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       PAGE 5
+       FOTO
+       ===================================================== -->
+
+  <section class="page page-5">
+
+    <div class="decor decor-1">♡</div>
+    <div class="decor decor-2">✦</div>
+    <div class="decor decor-3">♡</div>
+    <div class="decor decor-4">✦</div>
+    <div class="decor decor-5">♡</div>
+    <div class="decor decor-6">✦</div>
+
+
+    <div class="card photo-card">
+
+
+      <h1 class="photo-title">
+Our Memories🤍
+
+      </h1>
+
+
+      <p class="photo-subtitle">
+ ♡ Jaga hubungan ini yaa sayaangg ♡
+      </p>
+
+
+      <!-- =================================================
+           PHOTO SWIPER
+           ================================================= -->
+
+      <div class="photo-swiper">
+
+
+        <div class="photo-item">
+
+          <img
+            src="foto1.jpg"
+            alt="Foto 1"
+          >
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="foto2.jpg"
+            alt="Foto 2"
+          >
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="foto3.jpg"
+            alt="Foto 3"
+          >
+
+        </div>
+
+
+        <div class="photo-item">
+
+          <img
+            src="foto4.jpg"
+            alt="Foto 4"
+          >
+
+        </div>
+
+      </div>
+
+
+      <p class="photo-hint">
+
+      geser pelan-pelan yaa...
+
+      </p>
+
+
+      <button
+        class="back-to-message"
+        id="backMessageButton"
+      >
+
+        replay
+
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       MUSIK
+       ===================================================== -->
+
+  <audio
+    id="backgroundMusic"
+    src="music.mp3"
+    loop
+    preload="auto"
+  ></audio>
+
+
+
+  <script>
+
+
+    /* =====================================================
+       AMBIL PAGE
+       ===================================================== */
+
+    const page1 =
+      document.querySelector(".page-1");
+
+
+    const page2 =
+      document.querySelector(".page-2");
+
+
+    const page3 =
+      document.querySelector(".page-3");
+
+
+    const page4 =
+      document.querySelector(".page-4");
+
+
+    const page5 =
+      document.querySelector(".page-5");
+
+
+
+    /* =====================================================
+       FUNGSI PINDAH PAGE
+       ===================================================== */
+
+    function showPage(pageNumber) {
+
+      page1.classList.remove("active");
+
+      page2.classList.remove("active");
+
+      page3.classList.remove("active");
+
+      page4.classList.remove("active");
+
+      page5.classList.remove("active");
+
+
+      if (pageNumber === 1) {
+
+        page1.classList.add("active");
+
+      }
+
+
+      if (pageNumber === 2) {
+
+        page2.classList.add("active");
+
+      }
+
+
+      if (pageNumber === 3) {
+
+        page3.classList.add("active");
+
+      }
+
+
+      if (pageNumber === 4) {
+
+        page4.classList.add("active");
+
+      }
+
+
+      if (pageNumber === 5) {
+
+        page5.classList.add("active");
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       LOADING 2.8 DETIK
+       ===================================================== */
+
+    setTimeout(
+      function () {
+
+        showPage(2);
+
+      },
+      2800
+    );
+
+
+
+    /* =====================================================
+       MUSIK
+       ===================================================== */
+
+    const music =
+      document.getElementById(
+        "backgroundMusic"
+      );
+
+
+    function startMusic() {
+
+      if (!music) return;
+
+      music.volume = 0.7;
+
+      music
+        .play()
+        .catch(
+          function () {}
+        );
+
+    }
+
+
+
+    /* =====================================================
+       BUTTON IYAA
+       ===================================================== */
+
+    const yesButton =
+      document.getElementById(
+        "yesButton"
+      );
+
+
+    yesButton.addEventListener(
+      "click",
+      function () {
+
+        startMusic();
+
+        showPage(3);
+
+      }
+    );
+
+
+
+    /* =====================================================
+       BUTTON ENGGAA
+       ===================================================== */
+
+    const noButton =
+      document.getElementById(
+        "noButton"
+      );
+
+
+    function moveNoButton() {
+
+      const buttonWidth = 100;
+
+      const buttonHeight = 45;
+
+
+      const maxX =
+        window.innerWidth
+        -
+        buttonWidth
+        -
+        20;
+
+
+      const maxY =
+        window.innerHeight
+        -
+        buttonHeight
+        -
+        20;
+
+
+      const randomX =
+        Math.max(
+          10,
+          Math.random() * maxX
+        );
+
+
+      const randomY =
+        Math.max(
+          10,
+          Math.random() * maxY
+        );
+
+
+      noButton.style.position =
+        "fixed";
+
+
+      noButton.style.left =
+        randomX + "px";
+
+
+      noButton.style.top =
+        randomY + "px";
+
+
+      noButton.style.zIndex =
+        "9999";
+
+    }
+
+
+
+    /* =====================================================
+       DESKTOP
+       ===================================================== */
+
+    noButton.addEventListener(
+      "mouseenter",
+      moveNoButton
+    );
+
+
+
+    /* =====================================================
+       HP
+       ===================================================== */
+
+    noButton.addEventListener(
+      "touchstart",
+      function (event) {
+
+        event.preventDefault();
+
+        moveNoButton();
+
+      }
+    );
+
+
+
+    /* =====================================================
+       PAGE 3 -> PAGE 4
+       ===================================================== */
+
+    const nextButton =
+      document.getElementById(
+        "nextButton"
+      );
+
+
+    nextButton.addEventListener(
+      "click",
+      function () {
+
+        showPage(4);
+
+      }
+    );
+
+
+
+    /* =====================================================
+       PAGE 4 -> PAGE 5
+       ===================================================== */
+
+    const photoButton =
+      document.getElementById(
+        "photoButton"
+      );
+
+
+    photoButton.addEventListener(
+      "click",
+      function () {
+
+        showPage(5);
+
+      }
+    );
+
+
+
+    /* =====================================================
+       PAGE 5 -> PAGE 4
+       ===================================================== */
+
+    const backMessageButton =
+      document.getElementById(
+        "backMessageButton"
+      );
+
+
+    backMessageButton.addEventListener(
+      "click",
+      function () {
+
+        showPage(4);
+
+      }
+    );
+
+
+
+    /* =====================================================
+       MUSIK SAAT USER BERINTERAKSI
+       ===================================================== */
+
+    document.addEventListener(
+      "click",
+      function () {
+
+        if (
+          music &&
+          music.paused
+        ) {
+
+          music
+            .play()
+            .catch(
+              function () {}
+            );
+
+        }
+
+      },
+      {
+        once: true
+      }
+    );
+
+
+  </script>
+
+
+</body>
+
+</html>
